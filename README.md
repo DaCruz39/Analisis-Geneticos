@@ -28,5 +28,5 @@
 snpEff databases |grep i- ebola
 ```
 #### Se necesita un esquema de cebadores 
-
+![Texto alternativo](https://ejemplo.com/imagen.jpg)
 
