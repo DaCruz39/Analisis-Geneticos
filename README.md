@@ -14,9 +14,9 @@
 #### Nota: Los pipelines puestos a prueba bajo este proyecto Genome Detective (https://github.com/samnooij/GenomeDetective_extender), INSAFLU-TELEVIR (https://github.com/INSaFLU/INSaFLU) y ONTdeCIPHER (https://github.com/emiracherif/ONTdeCIPHER), fueron evaluados para la estandarización bioinformática. Se descartaron todos, menos este último debido a complicaciones al momento de su instalación (bases de datos limitadas, acceso limitado).
 
 ## ONTdeCIPHER 
-### Limitaciones
 ### SnpEff 
 #### Necesita una base de datos para realizar anotaciones genómicas. Existen bases de datos predefinidas para miles de genomas. Pero para el VIH aún no ha sido establecida.
-#### Al no poder implementarlo para VIH, se buscaron alternativas factibles, ejecutando 
+#### Al no poder implementarlo para VIH, se buscaron alternativas factibles, ejecutando el siguiente código 
+snpEff databases |grep i- ebola
 
 
