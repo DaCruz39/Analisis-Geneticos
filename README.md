@@ -17,6 +17,7 @@
 ### SnpEff 
 #### Necesita una base de datos para realizar anotaciones genómicas. Existen bases de datos predefinidas para miles de genomas. Pero para el VIH aún no ha sido establecida.
 #### Al no poder implementarlo para VIH, se buscaron alternativas factibles, ejecutando el siguiente código 
+
 snpEff databases |grep i- ebola
 
 
