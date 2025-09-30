@@ -11,4 +11,4 @@
 
 # Pregunta de investigación. ¿Los pipelines bioinformáticos actuales son compatibles con datos Nanopore y útiles para el análisis del VIH?
 ### Hipótesis: El uso combinado de pipelines especializados con análisis en R permitirá obtener consensos genómicos confiables y mutacionales relevantes de resistencia.
-### Nota: Los pipelines puestos a prueba bajo este proyecto Genome Detective https://github.com/samnooij/GenomeDetective_extender, INSAFLU-TELEVIR https://github.com/INSaFLU/INSaFLU y ONTdeCIPHER https://github.com/emiracherif/ONTdeCIPHER, fueron evaluados para la estandarización bioinformática. 
+#### Nota: Los pipelines puestos a prueba bajo este proyecto Genome Detective (https://github.com/samnooij/GenomeDetective_extender), INSAFLU-TELEVIR (https://github.com/INSaFLU/INSaFLU y ONTdeCIPHER https://github.com/emiracherif/ONTdeCIPHER), fueron evaluados para la estandarización bioinformática. 
