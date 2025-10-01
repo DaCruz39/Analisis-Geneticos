@@ -63,17 +63,9 @@ cd ../Pangolin && bash install_pangolin.sh
 ```
 Nota: pangolin funciona para linaje de variantes de COVID19 (no especializado para otros virus).
 
-
-# Ejecución
-Se deberá crear un directorio en primera instancia para guardar los datos de secuenciación 
-
-
-## Estructura de la ruta de trabajo
+### Sniffles
 ```bash
-Working_Directory
-	├── fastq_pass
-	│   ├── barcode01
-	│   ├── barcode02
+install -c bioconda snpeff
 ```
 
 # Estandarización pipeline bioinformático ONTdeCHIPER
@@ -119,11 +111,22 @@ Mover archivos fastq al directorio creado
 ```bash
 mv *.fastq /home/lab13/Documents/Ecologia_AnalisisGenomico/ValeriaNequiz/ebola_ontdecipher/ebola_fastq/
 ```
+Asignar una etiqueta a cada muestra
+```bash
+count=1; for f in *.fastq; do mkdir -p "barcode$(printf "%02d" $count)" && mv "$f" "barcode$(printf "%02d" $count)/" && ((count++)); done
+```
 
+Se deberá crear un directorio en primera instancia para guardar los datos de secuenciación 
 
+## Estructura de la ruta de trabajo
+```bash
+Working_Directory
+	├── fastq_pass
+	│   ├── barcode01
+	│   ├── barcode02
+```
 
-
-## 2. Ejecutar el script maestro
+## Ejecutar el script maestro
 ```bash
 python3 ruta/al/directorio/del/script/run_ONTdeCIPHER.py --step (valor) --params config.txt --samples config_samplename.tsv -t 4
 ```
@@ -133,9 +136,14 @@ python3 ruta/al/directorio/del/script/run_ONTdeCIPHER.py --step (valor) --params
 
 ``` --params ``` : se configura en un archivo .txt que incoropora parámetros personalizados para su ejecución 
 
+```bash
+nano config.txt
+```
+
 ### Ejemplo
 ```bash
-input_fastq="/home/valenq/ebola_v1/ebola_fastq"
+
+input_fastq="/home/lab13/Documents/Ecologia_analisis_genomico/ebola_ontdecipher/ebola_fastq"
 # tamaño mínimo de lectura
 min="300"
 # tamaño máximo de lectura
@@ -147,12 +155,15 @@ reference_genome_snpEff="ebola_zaire"
 medaka_model="r941_min_high_g360"
 primers="ZaireEbola/V2"
 #rutas
-sniffles="/home/valenq/miniconda3/envs/ontdecipher/bin/sniffles"
-conda_path="/home/valenq/miniconda3"
+sniffles="/home/lab13/anaconda3/envs/ontdecipher/bin/sniffles"
+conda_path="/home/lab13/anaconda3"
 ```
 
-
 ```bash --samples ```: archivo formato .tsv para asociar etiquetas con los nombres de las muestras:
+
+```bash
+nano config_prueba.tsv
+```
 
 ### Ejemplo
 ```bash
@@ -169,6 +180,22 @@ barcode08       ERR1248113
 
 ```bash --threads/t ``` : Número máximo de subprocesos a utilizar. Valor predeterminado: 4
 
+## Crear script maestro 
+
+```bash
+nano ejecutar
+```
+
+### Ejemplo
+```bash
+cd ~/ebola_ontdecipher
+
+python3 /home/lab13/Documents/Ecologia_AnalisisGenomico/ValeriaNequiz/ebola_ontdecipher/ONTdeCIPHER/ONTdeCIPHER/Scripts/run_ONTdeCIPHER.py \
+  --step multiqc \
+  --params config.txt \
+  --samples config_prueba.tsv \
+  -t 4
+```
 
 ## Resultados de salida del pipeline
 Después de ejecutar los pasos de ONTdeCIPHER, tendrá en su directorio de trabajo los siguientes archivos y carpetas.
@@ -204,7 +231,7 @@ Necesita una base de datos para realizar anotaciones genómicas. Existen bases d
 #### Al no poder implementarlo para VIH, se buscaron alternativas factibles, ejecutando el siguiente código 
 
 ```bash
-snpEff databases |grep i- ebola
+snpEff databases |grep ebola
 ```
 ### Esquema de cebadores 
 Se necesita disponer de ellos. Actualmente cuenta con los siguientes
