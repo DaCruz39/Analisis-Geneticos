@@ -76,11 +76,52 @@ Working_Directory
 	│   ├── barcode02
 ```
 
+# Estandarización pipeline bioinformático ONTdeCHIPER
 
-## 1. Activar el entorno conda 
+##  Activar el entorno conda 
 ```bash
 conda activate ontdecipher
 ```
+
+##  Selección de muestras 
+Se toma en cuenta que sea estrategia por amplicón. Actualmente, ONTdeCIPHER se utiliza principalmente para analizar la diversidad genética del SARS-CoV-2. Sin embargo, cualquier genoma de patógenos basado en amplicones.
+
+Para descargar 8 secuencias
+```bash
+prefetch ERR1014227 ERR1014312 ERR1050049 ERR1050053 ERR1050067 ERR1050068 ERR1248111 ERR1248113
+```
+
+Crear directorio donde guardar las secuencias
+```bash
+mkdir ebola_sra
+```
+Desagrupar los archivos en el directorio actual para sacar la versión .sra
+```bash
+mv E*/* ./
+```
+Eliminar directorios vacíos 
+```bash
+rmdir ERR*/
+```
+Mover archivos .sra a directorio
+```bash
+mv *.sra ebola_sra
+```
+Convertir archivos .sra a fastq
+```bash
+fasterq-dump *.sra
+```
+Crear directorio para fastq
+```bash
+mkdir fastq_ebola
+```
+Mover archivos fastq al directorio creado 
+```bash
+mv *.fastq /home/lab13/Documents/Ecologia_AnalisisGenomico/ValeriaNequiz/ebola_ontdecipher/ebola_fastq/
+```
+
+
+
 
 ## 2. Ejecutar el script maestro
 ```bash
