@@ -16,18 +16,21 @@ que es uno de los alineadores múltiples más usados en bioinformática por su v
 
 # Paso 2 
 instalar en dado caso que no lo tengan 
-
+```bash
 conda install -c bioconda iqtree 
-
+```
 # 2.1 ejecutamos este codigo, este comando nos ayudara para un análisis filogenético por máxima verosimilitud (ML) 
 usando IQ-TREE, una herramienta muy robusta y rápida para construir árboles evolutivos.
 
-
+```bash
 iqtree -s all_fasta_aligned.fasta -m GTR+G -bb 1000 -nt AUTO
+```
+te va generar estos archivos en tu carpeta de trabajo 
 
-#te va generar estos archivos en tu carpeta de trabajo 
 all_fasta_aligned.fasta.treefile → el árbol (Newick, ya listo)
+
 all_fasta_aligned.fasta.log → registro
+
 all_fasta_aligned.fasta.iqtree → parámetros del modelo
 
 # paso 3 descargamos todos los datos de la carpeta en el equipo o dispositivo 
@@ -36,13 +39,14 @@ all_fasta_aligned.fasta.iqtree → parámetros del modelo
 
 setwd("") 
 pongan su directrio en donde descargaron sus achivos de moba 
-
+```bash
 install.packages(ape) 
-
+```
 en dado caso que no lo tegamos 
 
 # ejecucion en R 
-
+```bash
 library(ape)
 tree <- read.tree("all_fasta_aligned.fasta.treefile") 
 plot(tree, main="Árbol filogenético (IQ-TREE)", cex=0.8) 
+```
