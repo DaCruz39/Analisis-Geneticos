@@ -190,7 +190,7 @@ nano ejecutar
 ```bash
 cd ~/ebola_ontdecipher
 
-python3 /home/lab13/Documents/Ecologia_AnalisisGenomico/ValeriaNequiz/ebola_ontdecipher/ONTdeCIPHER/ONTdeCIPHER/Scripts/run_ONTdeCIPHER.py \
+python3 /home/lab13/Documents/Ecologia_AnalisisGenomico/ValeriaNequiz/ebola_ontdecipher/Scripts/run_ONTdeCIPHER.py \
   --step multiqc \
   --params config.txt \
   --samples config_prueba.tsv \
