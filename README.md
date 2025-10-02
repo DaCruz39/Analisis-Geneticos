@@ -6,19 +6,20 @@ Cruz-David, Nequiz-Valeria, Salazar-Aldair
 
 ## Introducción
 La plataforma Oxford Nanopore permite la detección electrónica de secuencias de ADN midiendo los cambios de voltaje causados ​​por el movimiento de partículas que pasan a través del poro. Son adecuados para la detección y cuantificación de moléculas biológicas y químicas. Esto da como resultado lecturas más largas, lo que simplifica la reconstrucción del genoma en comparación con las lecturas cortas y ayuda a la identificación de variaciones estructurales, como regiones repetidas y duplicaciones (van Dijk et al., 2023).
-Para procesar las lecturas largas y propensas a errores que se generan, se requieren programas bioinformáticos especializados. Estos pueden ejecutarse automáticamente dentro de los pipelines para proporcionar eficazmente a los responsables de la toma de decisiones toda la información relevante sobre las características moleculares de un virus. 
+Para procesar las lecturas largas y propensas a errores que se generan, se requieren programas bioinformáticos especializados. Estos pueden ejecutarse automáticamente dentro de los pipelines para proporcionar eficazmente a los responsables de la toma de decisiones toda la información relevante sobre las características moleculares de un virus. Se planteó la hipotesis sobre el uso combinado de pipelines especializados con análisis en R permitirá obtener consensos genómicos confiables y mutacionales relevantes de resistencia.
 
 
 
-## Pregunta de investigación. ¿Los pipelines bioinformáticos actuales son compatibles con datos Nanopore y útiles para el análisis del VIH?
+## Pregunta de investigación. ¿Los pipelines bioinformáticos actuales son compatibles con datos Nanopore y útiles para el análisis de virus?
 
 
-### Hipótesis: El uso combinado de pipelines especializados con análisis en R permitirá obtener consensos genómicos confiables y mutacionales relevantes de resistencia.
+Nota: Los pipelines puestos a prueba bajo este proyecto Genome Detective (https://github.com/samnooij/GenomeDetective_extender), INSAFLU-TELEVIR (https://github.com/INSaFLU/INSaFLU) y ONTdeCIPHER (https://github.com/emiracherif/ONTdeCIPHER), fueron evaluados para la estandarización bioinformática. Se descartaron todos, menos este último debido a complicaciones al momento de su instalación (bases de datos limitadas, acceso limitado) y ejecucción de dichos pipelines. Se hizo uso del programa R para la realización de árboles filogenéticos y analisis de diversidad.
 
+## Genome Detective
+Genome Detective es un pipeline web automatizado para el análisis de datos de secuenciación de virus, que a partir de archivos FASTQ (Illumina, Ion Torrent, Nanopore) realiza control de calidad, ensamblaje de novo combinado con mapeo a referencia, genera genomas virales consensuales, identifica especies/cepas y detecta mutaciones a nivel nucleotídico, codónico y proteico; además, facilita tipificación y análisis filogenético, todo en una interfaz accesible para usuarios con poca experiencia en bioinformática.
 
-
-Nota: Los pipelines puestos a prueba bajo este proyecto Genome Detective (https://github.com/samnooij/GenomeDetective_extender), INSAFLU-TELEVIR (https://github.com/INSaFLU/INSaFLU) y ONTdeCIPHER (https://github.com/emiracherif/ONTdeCIPHER), fueron evaluados para la estandarización bioinformática. Se descartaron todos, menos este último debido a complicaciones al momento de su instalación (bases de datos limitadas, acceso limitado).
-
+## INSAFLU-TELEVIR
+INSAFLU-TELEVIR es una plataforma integrada para vigilancia genómica viral que combina detección metagenómica (TELEVIR) y análisis de vigilancia (INSaFLU), permitiendo desde la mejora de lecturas y depleción del hospedero hasta el ensamblado, identificación de virus en bases de datos, remapeo confirmatorio, generación de consensos, clasificación de linajes y construcción de árboles; está diseñada para procesar datos de múltiples tecnologías de secuenciación y facilitar la vigilancia rutinaria incluso en laboratorios con recursos bioinformáticos limitados.
 
 ## ONTdeCIPHER 
 Es un pipeline de secuenciación basado en amplicones de Oxford Nanopore Technology (ONT) que permite realizar análisis posteriores clave sobre datos de secuenciación sin procesar, desde pruebas de calidad hasta el efecto de los SNP y el análisis filogenético. ONTdeCIPHER integra 13 herramientas bioinformáticas, entre ellas Seqkit, la herramienta bioinformática ARTIC, PycoQC, MultiQC, Minimap2, Medaka, Nanopolish, Pangolin (con la base de datos modelo pangoLEARN), Deeptools (PlotCoverage, BamCoverage), Sniffles, MAFFT, RaxML y snpEff. 
@@ -26,7 +27,7 @@ Es un pipeline de secuenciación basado en amplicones de Oxford Nanopore Technol
 
 # Instalación
 ## Requerimientos:
-Python >=3
+Python >=3.6
 
 Conda >=3
 
@@ -47,7 +48,9 @@ conda env create --name ontdecipher --file=Environments/ontdecipher_linux.yml
 ```bash
 conda env create --name ontdecipher --file=Environments/ontdecipher_macOS.yml
 ```
-Para usuarios de macOS, consulten la sección de Consejos a continuación. Dado que Medaka no es compatible con el chip Silicon de Apple, ONTdeCIPHER no funciona actualmente en dispositivos equipados con dicho chip.
+Para usuarios de macOS, consulten la sección de Consideraciones a continuación. 
+
+Dado que Medaka no es compatible con el chip Silicon de Apple, ONTdeCIPHER no funciona actualmente en dispositivos equipados con dicho chip.
 
 
 ## 3. Instalación de Artic & Pangolin:
