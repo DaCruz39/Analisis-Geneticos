@@ -14,7 +14,12 @@ Este comando es una instrucción para alinear secuencias de ADN usando el progra
 que es uno de los alineadores múltiples más usados en bioinformática por su velocidad, precisión y versatilidad.
 
 # Paso 2 
-instalar en dado caso que no lo tengan 
+comprovar si tenomos iqtree 
+```bash
+which iqtree
+iqtree -v
+```
+Si no esta instalamos en dado caso que no lo tengan 
 ```bash
 conda install -c bioconda iqtree 
 ```
