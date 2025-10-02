@@ -1,0 +1,9 @@
+taxon,lineage,conflict,ambiguity_score,scorpio_call,scorpio_support,scorpio_conflict,scorpio_notes,version,pangolin_version,scorpio_version,constellation_version,is_designated,qc_status,qc_notes,note
+ERR1014227_barcode01/ARTIC/medaka EBOV|AF272001|Mayinga|Yambuku_DRC|1976,Unassigned,,,,,,,PUSHER-v1.35,4.3.1,0.3.19,v0.1.12,False,fail,failed to map,
+ERR1014312_barcode02/ARTIC/medaka EBOV|AF272001|Mayinga|Yambuku_DRC|1976,Unassigned,,,,,,,PUSHER-v1.35,4.3.1,0.3.19,v0.1.12,False,fail,failed to map,
+ERR1050049_barcode03/ARTIC/medaka EBOV|AF272001|Mayinga|Yambuku_DRC|1976,Unassigned,,,,,,,PUSHER-v1.35,4.3.1,0.3.19,v0.1.12,False,fail,failed to map,
+ERR1050053_barcode04/ARTIC/medaka EBOV|AF272001|Mayinga|Yambuku_DRC|1976,Unassigned,,,,,,,PUSHER-v1.35,4.3.1,0.3.19,v0.1.12,False,fail,failed to map,
+ERR1050067_barcode05/ARTIC/medaka EBOV|AF272001|Mayinga|Yambuku_DRC|1976,Unassigned,,,,,,,PUSHER-v1.35,4.3.1,0.3.19,v0.1.12,False,fail,failed to map,
+ERR1050068_barcode06/ARTIC/medaka EBOV|AF272001|Mayinga|Yambuku_DRC|1976,Unassigned,,,,,,,PUSHER-v1.35,4.3.1,0.3.19,v0.1.12,False,fail,failed to map,
+ERR1248111_barcode07/ARTIC/medaka EBOV|AF272001|Mayinga|Yambuku_DRC|1976,Unassigned,,,,,,,PUSHER-v1.35,4.3.1,0.3.19,v0.1.12,False,fail,failed to map,
+ERR1248113_barcode08/ARTIC/medaka EBOV|AF272001|Mayinga|Yambuku_DRC|1976,Unassigned,,,,,,,PUSHER-v1.35,4.3.1,0.3.19,v0.1.12,False,fail,failed to map,
