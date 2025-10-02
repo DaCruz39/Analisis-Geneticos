@@ -1,4 +1,4 @@
-# Crear un  arbol filogenetico 
+# Crear un árbol filogenético 
 
 Dependiendo del pipeline este nos debe arrojar un solo archivo fasta que contega todos los consessos ya juntos 
 en este caso nos arrojo este archivo de nombre 
