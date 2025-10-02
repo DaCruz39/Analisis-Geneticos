@@ -1,0 +1,10 @@
+#!/bin/bash
+
+cd ~/ebola_v1
+
+
+python3 /home/valenq/ONTdeCIPHER/Scripts/run_ONTdeCIPHER.py \
+  --step pip_core \
+  --params config.txt \
+  --samples config_prueba.tsv \
+  -t 4
