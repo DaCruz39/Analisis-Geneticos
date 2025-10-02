@@ -32,9 +32,9 @@ all_fasta_aligned.fasta.log → registro
 
 all_fasta_aligned.fasta.iqtree → parámetros del modelo
 
-# paso 3 descargamos todos los datos de la carpeta en el equipo o dispositivo 
+# Paso 3 descargamos todos los datos de la carpeta en el equipo o dispositivo 
 
-# paso 3.1 vamos a R y ponemos lo siguiente 
+# Paso 3.1 vamos a R y ponemos lo siguiente 
 
 setwd("") 
 pongan el directorio donde descargaron sus achivos de moba 
@@ -43,7 +43,7 @@ install.packages(ape)
 ```
 en dado caso que no lo tengamos 
 
-# ejecución en R 
+# Ejecución en R 
 ```bash
 library(ape)
 tree <- read.tree("all_fasta_aligned.fasta.treefile") 
