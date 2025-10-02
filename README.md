@@ -233,11 +233,6 @@ Necesita una base de datos para realizar anotaciones genómicas. Existen bases d
 ```bash
 snpEff databases |grep ebola
 ```
-### Esquema de cebadores 
-Se necesita disponer de ellos. Actualmente cuenta con los siguientes
-
-![Texto alternativo](https://ejemplo.com/imagen.jpg)
-
 
 ### RaxML
 Las herramientas bioinformáticas mafft y raxmlHPC, los cuales se utilizan para el análisis filogenético rápido y escalable de grandes conjuntos de datos, como alineaciones de secuencias de ADN y proteínas, mediante el método de máxima verosimilitud para reconstruir árboles evolutivos. Y al ejecutar con ``` plots ``` la función plot stats y el script plot_tree no se emiten. Pangolin al hacer asignación de linajes epidemiológicos especificos del COVID, inhabilita su funcionamiento para cualquier otro virus.
